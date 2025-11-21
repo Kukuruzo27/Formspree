@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Full Screen Mobile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
+        
+        .page {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            padding: 
+                max(20px, env(safe-area-inset-top)) 
+                max(20px, env(safe-area-inset-right)) 
+                max(20px, env(safe-area-inset-bottom)) 
+                max(20px, env(safe-area-inset-left));
+        }
+    </style>
+</head>
+<body>
+<form
+  action="https://formspree.io/f/xeonbwag"
+  method="POST"
+>
+  <label>
+    Ваш имейл:
+    <input type="email" name="email">
+  </label>
+<br><label></label>
+  <br><label> Анекдот: 
+    <textarea name="message"></textarea>
+  </label>
+  <!-- your other form fields go here -->
+  <br><button type="submit">ОТПРАВИТЬ</button>
+</form>
+</body>
+</html>
