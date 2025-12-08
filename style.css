@@ -1,0 +1,164 @@
+/* Базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Контейнер формы */
+.form-wrapper {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Группы формы */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+/* Стили для текстового поля */
+textarea {
+    width: 100%;
+    padding: 20px;
+    margin: 8px 0;
+    border: 2px solid #e1e5e9;
+    border-radius: 12px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+    resize: vertical;
+    min-height: 200px;
+    line-height: 1.5;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    transform: translateY(-2px);
+}
+
+textarea::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+/* Стили для кнопки */
+button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 16px 32px;
+    margin: 20px 0 8px 0;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* Эффект при наведении на кнопку */
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    opacity: 0.95;
+}
+
+button:active {
+    transform: translateY(-1px);
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-wrapper {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Адаптация для мобильных устройств */
+@media screen and (max-width: 768px) {
+    .form-wrapper {
+        padding: 30px 20px;
+        margin: 20px;
+        border-radius: 15px;
+    }
+    
+    .form-title {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+    
+    textarea {
+        padding: 15px;
+        font-size: 16px;
+        min-height: 150px;
+    }
+    
+    button {
+        padding: 14px 20px;
+        font-size: 1.1em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .form-wrapper {
+        padding: 25px 15px;
+        margin: 10px;
+    }
+    
+    .form-title {
+        font-size: 1.8em;
+    }
+    
+    .form-group label {
+        font-size: 1em;
+    }
+    
+    textarea {
+        min-height: 120px;
+    }
+}
+
+/* Специфичные стили для безопасных зон на iOS */
+@supports(padding: max(0px)) {
+    .form-wrapper {
+        padding-left: max(15px, env(safe-area-inset-left));
+        padding-right: max(15px, env(safe-area-inset-right));
+    }
+}
